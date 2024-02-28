@@ -8,6 +8,8 @@ services:
     restart: always
     ports:
       - '5432:5432'
+    volumes:
+      - ./seed.sql:/docker-entrypoint-initdb.d/seed.sql
     environment:
       POSTGRES_USER: 'postgres'
       POSTGRES_PASSWORD: 'postgres'
